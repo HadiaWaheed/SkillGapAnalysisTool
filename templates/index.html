@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CareerPath Pro - AI Skill Analysis</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>CareerPath Pro</span>
+            </div>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#how-it-works">How It Works</a>
+                <a href="#contact" class="cta-nav">Get Started</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Discover Your Perfect
+                    <span class="gradient-text">Career Match</span>
+                </h1>
+                <p class="hero-subtitle">
+                    AI-powered skill analysis to bridge the gap between your current skills and dream career opportunities.
+                </p>
+                
+                <div class="form-card">
+                    <h2><i class="fas fa-chart-line"></i> Analyze Your Skills</h2>
+                    <form action="/analyze" method="POST">
+                        <div class="input-group">
+                            <textarea name="skills" rows="6" placeholder="Enter your skills separated by commas...
+Example: Python, Machine Learning, Data Analysis, SQL, Communication, Project Management, JavaScript, React..." required></textarea>
+                            <div class="input-hint">
+                                <i class="fas fa-lightbulb"></i> Be specific! Include both technical and soft skills.
+                            </div>
+                        </div>
+                        <button type="submit" class="analyze-btn">
+                            <i class="fas fa-magic"></i> Analyze My Career Path
+                        </button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <div class="card-header">
+                        <div class="card-badge">AI Analysis</div>
+                        <h3>Sample Career Match</h3>
+                    </div>
+                    <div class="card-content">
+                        <div class="match-result">
+                            <div class="match-score">92% Match</div>
+                            <div class="job-title">Data Scientist</div>
+                            <div class="skills-tags">
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Machine Learning</span>
+                                <span class="skill-tag">SQL</span>
+                                <span class="skill-tag">Statistics</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose CareerPath Pro?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI-Powered Analysis</h3>
+                    <p>Advanced machine learning algorithms analyze your skills and match them with ideal career paths.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Precision Matching</h3>
+                    <p>Get accurate career recommendations based on real industry requirements and skill demands.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3>Career Roadmap</h3>
+                    <p>Receive personalized guidance on skills to develop for your chosen career path.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Skill Gap Analysis</h3>
+                    <p>Identify missing skills and get actionable insights to bridge your career gaps.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Enter Your Skills</h3>
+                        <p>List all your technical skills, soft skills, tools, and technologies you're familiar with.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>AI Analysis</h3>
+                        <p>Our machine learning model analyzes patterns and matches your skills with career clusters.</p>
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Get Results</h3>
+                        <p>Receive your career match with confidence scores and personalized recommendations.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <i class="fas fa-rocket"></i>
+                        <span>CareerPath Pro</span>
+                    </div>
+                    <p>AI-powered career guidance and skill analysis platform.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <a href="#features">Features</a>
+                        <a href="#how-it-works">How It Works</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareerPath Pro. Developed by <strong>Hadia Waheed</strong>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

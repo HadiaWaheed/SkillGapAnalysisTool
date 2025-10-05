@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Career Analysis Results - CareerPath Pro</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-rocket"></i>
+                <span>CareerPath Pro</span>
+            </div>
+            <div class="nav-links">
+                <a href="/">Home</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Results Section -->
+    <section class="results-hero">
+        <div class="container">
+            <div class="results-header">
+                <h1><i class="fas fa-chart-line"></i> Career Analysis Results</h1>
+                <p>Your personalized career path analysis based on AI-powered skill matching</p>
+            </div>
+
+            {% if error %}
+                <div class="error-card">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <h3>Analysis Error</h3>
+                    <p>{{ error }}</p>
+                    <a href="/" class="back-btn">
+                        <i class="fas fa-arrow-left"></i> Try Again
+                    </a>
+                </div>
+            {% else %}
+                <!-- Main Results Grid -->
+                <div class="results-grid">
+                    <!-- Primary Match Card -->
+                    <div class="primary-match-card">
+                        <div class="match-header">
+                            <div class="match-badge">
+                                <i class="fas fa-trophy"></i>
+                                Best Career Match
+                            </div>
+                            <div class="match-score">{{ match_percentage }}% Match</div>
+                        </div>
+                        
+                        <h2 class="job-title">{{ best_job }}</h2>
+                        <p class="career-cluster"><i class="fas fa-layer-group"></i> {{ career_cluster }}</p>
+                        
+                        <div class="progress-section">
+                            <div class="progress-bar">
+                                <div class="progress-fill" style="width: {{ match_percentage }}%"></div>
+                            </div>
+                            <div class="progress-stats">
+                                <span>Skill Match: {{ match_percentage }}%</span>
+                                <span>{{ existing_skills|length }}/{{ total_required }} Skills</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills Analysis -->
+                    <div class="skills-analysis-card">
+                        <h3><i class="fas fa-check-circle"></i> Your Matching Skills</h3>
+                        <div class="skills-grid">
+                            {% for skill in existing_skills %}
+                            <div class="skill-item matched">
+                                <i class="fas fa-check"></i>
+                                {{ skill }}
+                            </div>
+                            {% endfor %}
+                        </div>
+
+                        {% if missing_skills %}
+                        <h3><i class="fas fa-exclamation-circle"></i> Skills to Develop</h3>
+                        <div class="skills-grid">
+                            {% for skill in missing_skills %}
+                            <div class="skill-item missing">
+                                <i class="fas fa-plus"></i>
+                                {{ skill }}
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Top Matches -->
+                    <div class="matches-card">
+                        <h3><i class="fas fa-star"></i> Other Great Matches</h3>
+                        <div class="matches-list">
+                            {% for match in top_matches %}
+                            <div class="match-item">
+                                <div class="match-job">{{ match.job_title }}</div>
+                                <div class="match-percentage">{{ match.similarity }}%</div>
+                            </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+                    <!-- Action Cards -->
+                    <div class="action-cards">
+                        <div class="action-card">
+                            <i class="fas fa-graduation-cap"></i>
+                            <h4>Learning Path</h4>
+                            <p>Get personalized course recommendations to bridge your skill gaps</p>
+                        </div>
+                        
+                        <div class="action-card">
+                            <i class="fas fa-briefcase"></i>
+                            <h4>Job Opportunities</h4>
+                            <p>Explore relevant job openings matching your skill profile</p>
+                        </div>
+                        
+                        <div class="action-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Career Growth</h4>
+                            <p>Plan your career progression with our roadmap tool</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CTA Section -->
+                <div class="cta-section">
+                    <h3>Ready to take the next step in your career?</h3>
+                    <p>Start developing the skills you need to land your dream job.</p>
+                    <div class="cta-buttons">
+                        <a href="/" class="cta-btn primary">
+                            <i class="fas fa-redo"></i> New Analysis
+                        </a>
+                        <button class="cta-btn secondary" onclick="window.print()">
+                            <i class="fas fa-download"></i> Download Report
+                        </button>
+                    </div>
+                </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="nav-logo">
+                        <i class="fas fa-rocket"></i>
+                        <span>CareerPath Pro</span>
+                    </div>
+                    <p>AI-powered career guidance and skill analysis platform.</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <a href="/">Home</a>
+                        <a href="#features">Features</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="#">Help Center</a>
+                        <a href="#">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 CareerPath Pro. Developed by <strong>Hadia Waheed</strong>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple animations
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.skill-item, .match-item, .action-card');
+            elements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
