@@ -74,8 +74,9 @@ CareerPath-Pro/
 ### Step 1: Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/careerpath-pro.git
-cd careerpath-pro
+git clone https://github.com/HadiaWaheed/SkillGapAnalysisTool.git
+cd SkillGapAnalysisTool
+
 ```
 
 ### Step 2: Create Virtual Environment
@@ -265,7 +266,3 @@ Licensed under the **MIT License**.
 </div>
 
 ---
-
-Would you like me to update it automatically with **your GitHub username (`HadiaWaheed`) and email** so you can paste it directly (no placeholders)?
-
-
