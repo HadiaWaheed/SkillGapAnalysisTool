@@ -1,8 +1,3 @@
-Perfect 💪 Hadia!
-You can directly **copy-paste** the entire README content below into your `README.md` file inside your project folder — no edits needed (except the username/email placeholders).
-
----
-
 # 🎯 CareerPath Pro - AI Skill Analysis & Career Recommender
 
 A sophisticated AI-powered web application that analyzes user skills and recommends optimal career paths using machine learning algorithms. The system identifies skill gaps and provides personalized career guidance.
@@ -272,4 +267,5 @@ Licensed under the **MIT License**.
 ---
 
 Would you like me to update it automatically with **your GitHub username (`HadiaWaheed`) and email** so you can paste it directly (no placeholders)?
+
 
