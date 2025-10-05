@@ -4,8 +4,6 @@ A sophisticated AI-powered web application that analyzes user skills and recomme
 
 ---
 
-## 🚀 Live Demo
-
 **📱 Mobile Responsive:** Yes
 **⚡ Performance:** Fast & Efficient
 
@@ -266,3 +264,4 @@ Licensed under the **MIT License**.
 </div>
 
 ---
+
